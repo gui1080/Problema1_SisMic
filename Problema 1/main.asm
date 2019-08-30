@@ -30,7 +30,7 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 ; Main loop here
 ;-------------------------------------------------------------------------------
 
-NUM			.equ	3518          			; num a ser convertido  2019 = 0x07E3
+NUM			.equ	2019          			; num a ser convertido  2019 = 0x07E3, MMXIX
 
 			mov 	#NUM, R5				; R5 = num a ser convertido
 			mov 	#RESP, R6				; R6 = ponteiro pra escrever resposta
@@ -45,6 +45,12 @@ NUM			.equ	3518          			; num a ser convertido  2019 = 0x07E3
 ;-------------------------------------------------------------------------------
 
 ALG_ROM:
+
+			push	R5						; contexto
+			push	R6
+
+inicio:
+
 			CMP		#0x0BB8, R5				; compara input com 3000
 			JEQ		designa_MMM				; se a condição é satisfeita, chama subrotina
 			JHS		designa_MMM
@@ -517,6 +523,8 @@ designa_I:
 designa_fim:
 
 			MOV		#0x0000, 0(R6)			; final da respota
+			pop		R6						; contexto
+			pop		R5
 			ret								; retornamos da função
 
 ;-------------------------------------------------------------------------------
