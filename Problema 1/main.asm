@@ -1,6 +1,5 @@
 ;-------------------------------------------------------------------------------
-; Aluno: Guilherme Braga Pinto
-; 17/0162290
+; Aluno: Guilherme Braga Pinto (17/0162290) e Gabriel Matheus (17/0103498)
 ; LabSismic Turma D
 ; Link no Github: https://github.com/therealguib545/Problema1_SisMic
 ;-------------------------------------------------------------------------------
@@ -31,7 +30,7 @@ StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
 ; Main loop here
 ;-------------------------------------------------------------------------------
 
-NUM			.equ	2019          			; num a ser convertido  2019 = 0x07E3
+NUM			.equ	3518          			; num a ser convertido  2019 = 0x07E3
 
 			mov 	#NUM, R5				; R5 = num a ser convertido
 			mov 	#RESP, R6				; R6 = ponteiro pra escrever resposta
