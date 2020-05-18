@@ -1,7 +1,7 @@
 ;-------------------------------------------------------------------------------
 ; Aluno: Guilherme Braga Pinto (17/0162290) e Gabriel Matheus (17/0103498)
 ; LabSismic Turma D
-; Link no Github: https://github.com/therealguib545/Problema1_SisMic
+; Link no Github: https://github.com/gui1080/Problema1_SisMic
 ;-------------------------------------------------------------------------------
 
 ;-------------------------------------------------------------------------------
@@ -48,20 +48,20 @@ ALG_ROM:
 inicio:
 
 			CMP		#0x0BB8, R5				; compara input com 3000
-			JEQ		designa_MMM				; se a condiÁ„o È satisfeita, chama subrotina
+			JEQ		designa_MMM				; se a condi√ß√£o √© satisfeita, chama subrotina
 			JHS		designa_MMM
 											; para o numero menor do que 3000, continua
 
 			CMP		#0x07D0, R5				; compara input com 2000
-			JEQ		designa_MM				; se a condiÁ„o È satisfeita, chama subrotina
+			JEQ		designa_MM				; se a condi√ß√£o √© satisfeita, chama subrotina
 			JHS		designa_MM
 											; para o numero menor do que 2000, continua
 
 			CMP		#0x03E8, R5				; compara input com 1000
-			JEQ		designa_M				; se a condiÁ„o È satisfeita, chama subrotina
+			JEQ		designa_M				; se a condi√ß√£o √© satisfeita, chama subrotina
 			JHS		designa_M
-											; para o numero menor do que 1000, n„o ha o que ser convertido em relaÁ„o aos milhares
-			JMP		tratar_centenas			; vamos incondicionalmente para a etapa seguinte do algoritmo, sem executar operaÁıes
+											; para o numero menor do que 1000, n√£o ha o que ser convertido em rela√ß√£o aos milhares
+			JMP		tratar_centenas			; vamos incondicionalmente para a etapa seguinte do algoritmo, sem executar opera√ß√µes
 
 designa_MMM:
 
@@ -116,10 +116,10 @@ maior_500:
 
 			CMP		#0x0384, R5				; compara com 900
 			JEQ		designa_CM				; se igual, atribuimos 900
-			JHS		designa_CM				; se maior que 900, atribuimos 900 por sabermos que o numero j· È menor que 1000
+			JHS		designa_CM				; se maior que 900, atribuimos 900 por sabermos que o numero j√° √© menor que 1000
 			JL		designa_DCCC			; se menor que 900 e maior que 800, atribuimos 800
 
-											; se nenhuma condiÁ„o foi satisfeita, logo n„o h· centenas a serem convertidas
+											; se nenhuma condi√ß√£o foi satisfeita, logo n√£o h√° centenas a serem convertidas
 			JMP		tratar_dezenas			; salto incondicional para nova parte do algoritmo
 
 menor_500:
@@ -127,12 +127,12 @@ menor_500:
 			CMP 	#0x0190, R5				; compara com 400
 			JEQ		designa_CD				; se igual, atribuimos 400
 			JHS		designa_CD				; se maior que 400 e menor que 500, atribuimos 400
-											; continuamos se o numero È menor que 400
+											; continuamos se o numero √© menor que 400
 
 			CMP		#0x012C, R5				; compara com 300
 			JEQ		designa_CCC				; se igual, atribuimos 300
 			JHS		designa_CCC				; se maior que 300 e menor que 400, atribuimos 300
-											; continuamos se o numero È menor que 300
+											; continuamos se o numero √© menor que 300
 
 			CMP		#0x00C8, R5				; compara com 200
 			JEQ		designa_CC				; se igual, atribuimos 200
@@ -142,7 +142,7 @@ menor_500:
 			JEQ		designa_C				; se igual, atribuimos 100
 			JHS		designa_C				; se maior que 100 e menor que 200, atribuimos 100
 
-											; se nenhuma condiÁ„o foi satisfeita, logo n„o h· centenas a serem convertidas
+											; se nenhuma condi√ß√£o foi satisfeita, logo n√£o h√° centenas a serem convertidas
 			JMP 	tratar_dezenas			; salto incondicional para nova parte do algoritmo
 
 
@@ -252,12 +252,12 @@ menor_50:
 			CMP 	#0x0028, R5				; compara com 40
 			JEQ		designa_XL				; se igual, atribuimos 40
 			JHS		designa_XL				; se maior que 40 e menor que 50, atribuimos 40
-											; continuamos se o numero È menor que 40
+											; continuamos se o numero √© menor que 40
 
 			CMP		#0x001E, R5				; compara com 30
 			JEQ		designa_XXX				; se igual, atribuimos 30
 			JHS		designa_XXX				; se maior que 300 e menor que 40, atribuimos 30
-											; continuamos se o numero È menor que 30
+											; continuamos se o numero √© menor que 30
 
 			CMP		#0x0014, R5				; compara com 20
 			JEQ		designa_XX				; se igual, atribuimos 20
@@ -267,7 +267,7 @@ menor_50:
 			JEQ		designa_X				; se igual, atribuimos 10
 			JHS		designa_X				; se maior que 100 e menor que 20, atribuimos 10
 
-											; se nenhuma condiÁ„o foi satisfeita, logo n„o h· dezenas a serem convertidas
+											; se nenhuma condi√ß√£o foi satisfeita, logo n√£o h√° dezenas a serem convertidas
 			JMP 	tratar_unidades			; salto incondicional para nova parte do algoritmo
 
 maior_50:
@@ -286,10 +286,10 @@ maior_50:
 
 			CMP		#0x0384, R5				; compara com 90
 			JEQ		designa_XC				; se igual, atribuimos 90
-			JHS		designa_XC				; se maior que 90, atribuimos 90 por sabermos que o numero j· È menor que 100
+			JHS		designa_XC				; se maior que 90, atribuimos 90 por sabermos que o numero j√° √© menor que 100
 			JL		designa_LXXX			; se menor que 90 e maior que 80, atribuimos 80
 
-											; se nenhuma condiÁ„o foi satisfeita, logo n„o h· centenas a serem convertidas
+											; se nenhuma condi√ß√£o foi satisfeita, logo n√£o h√° centenas a serem convertidas
 			JMP		tratar_dezenas			; salto incondicional para nova parte do algoritmo
 
 
@@ -521,7 +521,7 @@ designa_fim:
 			MOV		#0x0000, 0(R6)			; final da respota
 			pop		R6						; contexto
 			pop		R5
-			ret								; retornamos da funÁ„o
+			ret								; retornamos da fun√ß√£o
 
 ;-------------------------------------------------------------------------------
 
